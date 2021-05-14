@@ -40,7 +40,7 @@ $(document).on("click", "#btnSave", function(event) {
 			data: $("#formFeedback").serialize(),
 			dataType: "text",
 			complete: function(response, status) {
-				onItemSaveComplete(response.responseText, status);
+				onfeedSaveComplete(response.responseText, status);
 			}
 		});
 
@@ -48,7 +48,7 @@ $(document).on("click", "#btnSave", function(event) {
 
 
 
-function onItemSaveComplete(response, status) {
+function onfeedSaveComplete(response, status) {
 
 	if (status == "success") {
 		var resultSet = JSON.parse(response);
@@ -149,7 +149,7 @@ $(document).on("click", ".btnRemove", function(event) {
 			data: "fID=" + $(this).data("feedid"),
 			dataType: "text",
 			complete: function(response, status) {
-				onItemDeleteComplete(response.responseText, status);
+				onfeedDeleteComplete(response.responseText, status);
 			}
 
 
@@ -160,7 +160,7 @@ $(document).on("click", ".btnRemove", function(event) {
 
 
 
-function onItemDeleteComplete(response, status) {
+function onfeedDeleteComplete(response, status) {
 
 	if (status == "success") {
 		var resultSet = JSON.parse(response);
